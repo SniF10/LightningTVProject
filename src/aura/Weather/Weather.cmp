@@ -1,0 +1,55 @@
+<aura:component controller="WeatherController" >
+
+  <aura:attribute name="weather" type="Object" />
+  <aura:attribute name="message" type="String" />
+  <aura:attribute name="title" type="String" />
+  <aura:attribute name="severity" type="String" />
+  
+  <aura:handler name="init" value="{!this }" action="{! c.doInit }"/>
+
+  <div class="slds-col--padded slds-size--1-of-1 ">
+    <aura:if isTrue="{!v.weather != null}">
+        <div class="slds-grid">
+          <div class="slds-col slds-has-flexi-truncate">
+            <div class="slds-media slds-media--center slds-no-space slds-grow slds-m-top_large slds-m-left_x-large">
+              <div class="slds-media__body">
+                <p class="slds-text-heading--label">City</p>
+                <h1 class="slds-page-header__title slds-m-right--small slds-truncate slds-align-middle" style="font-weight: bold;font-size: 3vh;" title="Record Title">
+                  {!v.weather.name},&nbsp;{!v.weather.sys.country}
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="slds-grid slds-m-top_large slds-m-left_x-large">
+          <li class="slds-page-header__detail-block">
+            <p class="slds-text-heading--label-normal  slds-m-bottom--xx-small" style="font-size: 2vh;" title="Current">Current</p>
+            <p style="font-size: 2vh;">{!v.weather.main.temp}&deg;C</p>
+          </li>
+          <li class="slds-page-header__detail-block">
+            <p class="slds-text-heading--label-normal  slds-m-bottom--xx-small" style="font-size: 2vh;" title="Minimum">Minimum</p>
+            <p style="font-size: 2vh;">{!v.weather.main.temp_min}&deg;C</p>
+          </li>
+          <li class="slds-page-header__detail-block">
+            <p class="slds-text-heading--label-normal  slds-m-bottom--xx-small" style="font-size: 2vh;" title="Minimum">Maximum</p>
+            <p style="font-size: 2vh;">{!v.weather.main.temp_max}&deg;C</p>
+          </li>        
+        </ul>
+        <ul class="slds-grid slds-m-top_large slds-m-left_x-large">
+        <li class="slds-page-header__detail-block">
+            <p class="slds-text-heading--label-normal  slds-m-bottom--xx-small" style="font-size: 2vh;" title="Current">Wind</p>
+            <p style="font-size: 2vh;">{!v.weather.wind.speed}&deg;C</p>
+          </li>
+          <li class="slds-page-header__detail-block">
+            <p class="slds-text-heading--label-normal  slds-m-bottom--xx-small" style="font-size: 2vh;" title="Minimum">Humidity</p>
+            <p style="font-size: 2vh;">{!v.weather.main.humidity}&deg;C</p>
+          </li>
+          <li class="slds-page-header__detail-block">
+            <p class="slds-text-heading--label-normal  slds-m-bottom--xx-small" style="font-size: 2vh;" title="Minimum">Pressure</p>
+            <p style="font-size: 2vh;">{!v.weather.main.pressure}&deg;C</p>
+          </li>
+        </ul>      
+    </aura:if>
+  </div>
+    
+</aura:component>

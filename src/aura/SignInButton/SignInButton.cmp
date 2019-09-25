@@ -1,0 +1,11 @@
+<aura:component >
+
+	<div class="background">
+
+	    <div class="slds-p-around_medium slds-m-top-large slds-align_absolute-center">
+	    	<button class="slds-button slds-button_neutral" style="margin-top:35%;width: 500px" onclick="{!c.openActionWindow}">Sign In</button>
+		</div>
+
+	</div>	
+	
+</aura:component>

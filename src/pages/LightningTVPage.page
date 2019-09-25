@@ -1,0 +1,17 @@
+<apex:page sidebar="false" showHeader="false" controller="SignInLightningTVController" action="{!show}">
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+
+    <script>
+        var req="{!req}";
+        $Lightning.use("c:LightningTVApp", function() {
+          $Lightning.createComponent("c:SignInLightningTV",
+          {"signIn": req },
+          "lightning",
+          function(cmp) {
+          });
+        });
+    </script>
+</apex:page>

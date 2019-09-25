@@ -1,0 +1,16 @@
+.THIS {
+	background-color: rgba(255,255,255,.5);
+}
+
+.THIS.section1 {
+	height: 30%;
+	width: 100%;
+}
+.THIS.section2 {
+	height: 75%;
+	width: 100%;
+}
+.THIS.section3 {
+	height: 30%;
+	width: 100%;
+}

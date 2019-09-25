@@ -1,0 +1,55 @@
+<aura:component access="GLOBAL">
+
+	<aura:attribute name="today" type="Date" default="0"/>
+
+	<aura:handler name="init" value="{!this }" action="{! c.doInit }"/>
+
+	<p style="font-size: 1.5rem; text-align:center;">
+		<lightning:formattedDateTime value="{!v.today}" year="2-digit" month="short" day="2-digit" weekday="long"/>
+	</p>
+
+	<div class="slds-col slds-m-top_medium slds-align_absolute-center" style="font-size: 2vh;"> 
+		<div class="slds-col slds-size_1-of-3 slds-float_left slds-m-left_large " style="font-weight: bold;">
+			<p>
+				Minsk
+			</p>				
+			<p>
+				San Francisco
+			</p>
+			
+			<p>
+				New York
+			</p>
+			<p>
+				London
+			</p>
+			<p>
+				Amsterdam
+			</p>   
+		</div>
+
+		<div class="slds-col slds-size_1-of-2 slds-float_left">
+			<p>
+				<lightning:formattedDateTime value="{!v.today}" hour="2-digit" minute="2-digit" second="2-digit" timeZoneName="short" timeZone="Europe/Minsk"/>
+			</p>
+			<p>
+				<lightning:formattedDateTime value="{!v.today}" hour="2-digit" minute="2-digit" second="2-digit" timeZoneName="short" timeZone="America/Los_Angeles"/>
+			</p>
+			<p>
+				<lightning:formattedDateTime value="{!v.today}" hour="2-digit" minute="2-digit" second="2-digit" timeZoneName="short" timeZone="America/New_York"/>
+			</p>
+			<p>
+				<lightning:formattedDateTime value="{!v.today}" hour="2-digit" minute="2-digit" second="2-digit" timeZoneName="short" timeZone="Europe/London"/>
+			</p>
+			<p
+				><lightning:formattedDateTime value="{!v.today}" hour="2-digit" minute="2-digit" second="2-digit" timeZoneName="short" timeZone="Europe/Amsterdam"/>
+			</p>   
+		</div>
+		
+	</div>
+
+	<div class="slds-col slds-m-top_medium section2">
+	    <c:Weather/>
+	</div>
+	
+</aura:component>

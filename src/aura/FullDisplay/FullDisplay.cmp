@@ -1,0 +1,23 @@
+<aura:component controller='FullDisplayController' access="GLOBAL">
+
+	<aura:attribute name="leftSectionChannelItemsList" 		type="JET_BI_Channel_Item__c[]"	default="[]" />
+	<aura:attribute name="centerSectionChannelItemsList" 	type="JET_BI_Channel_Item__c[]"	default="[]" />
+	<aura:attribute name="timerRefresh" 					type="Integer"					default="0" />
+
+	<aura:handler name="init" value="{!this }" action="{! c.doInit }"/>
+	
+	<div class="slds-grid">
+	    <div class=" slds-col slds-size_1-of-4 slds-float_left leftpart">
+	      	<c:LeftPart channelItemsList="{!v.leftSectionChannelItemsList}" />
+		</div>
+
+		<div class=" slds-col slds-size_2-of-4 slds-float_left centerpart">
+			<c:CenterPart channelItemsList="{!v.centerSectionChannelItemsList}" />
+	    </div>
+	    
+	    <div class=" slds-col slds-size_1-of-4 slds-float_left rightpart">
+			<c:RightPart/>
+	    </div>
+	</div>
+
+</aura:component>
